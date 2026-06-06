@@ -34,7 +34,7 @@ Site sobre as principais ferramentas de Inteligência Artificial (ChatGPT, Claud
 
 ## Apresentação Dinâmica de Dados
 
-**Aluno(a):** Francisco Ronaldo Vasconcelos Araújo — **Matrícula:** [Sua matrícula]
+**Aluno(a):** Francisco Ronaldo Vasconcelos Araújo — **Matrícula:** 1659978
 
 **Funcionalidade:** Calendário interativo de notícias por data de publicação
 **Biblioteca utilizada:** FullCalendar
