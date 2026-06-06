@@ -105,7 +105,7 @@ body {
 }
 
 /* ─── Detalhe ────────────────────────────────────────────────────────────── */
-.pt-navbar { padding-top: 76px; }
+.pt-navbar { padding-top: 96px; }
 .detalhe-img-wrapper { position: relative; }
 .detalhe-img { max-height: 420px; object-fit: cover; }
 .detalhe-badge {

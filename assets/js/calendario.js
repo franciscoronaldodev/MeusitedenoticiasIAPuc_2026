@@ -104,4 +104,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   calendar.render();
+
+  // Garante que a tela abra no mês do primeiro lançamento
+  if (dataInicial) {
+    calendar.gotoDate(dataInicial);
+  }
 });
