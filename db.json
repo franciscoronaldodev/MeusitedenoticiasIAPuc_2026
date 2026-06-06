@@ -95,6 +95,22 @@
         { "id": 2, "nome": "Animação IA", "descricao": "Gera animações fluidas com personagens e cenários detalhados.", "imagem": "https://picsum.photos/seed/sora-anim/400/300" },
         { "id": 3, "nome": "Edição Criativa", "descricao": "Edita e transforma vídeos existentes com inteligência artificial.", "imagem": "https://picsum.photos/seed/sora-edit/400/300" }
       ]
+    },
+    {
+      "id": 7,
+      "nome": "DALL-E",
+      "descricao": "Modelo da OpenAI que gera imagens originais a partir de descrições em linguagem natural.",
+      "conteudo": "DALL-E é o modelo de geração de imagens da OpenAI, capaz de criar ilustrações, fotos e artes a partir de descrições textuais. Combina criatividade e precisão, sendo amplamente usado em design, publicidade e produção de conteúdo visual.",
+      "empresa": "OpenAI",
+      "categoria": "Geração de Imagens",
+      "lancamento": "2022-06-10",
+      "destaque": false,
+      "imagem_principal": "https://picsum.photos/seed/dalle-main/1200/500",
+      "recursos": [
+        { "id": 1, "nome": "Texto para Imagem", "descricao": "Cria imagens originais a partir de descrições escritas.", "imagem": "https://picsum.photos/seed/dalle-txt/400/300" },
+        { "id": 2, "nome": "Variações", "descricao": "Gera diferentes versões de uma mesma imagem.", "imagem": "https://picsum.photos/seed/dalle-var/400/300" },
+        { "id": 3, "nome": "Edição de Imagens", "descricao": "Edita partes de uma imagem mantendo o contexto.", "imagem": "https://picsum.photos/seed/dalle-edit/400/300" }
+      ]
     }
   ]
 }

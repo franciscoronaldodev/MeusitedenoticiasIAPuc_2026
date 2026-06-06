@@ -43,6 +43,6 @@ Site sobre as principais ferramentas de Inteligência Artificial (ChatGPT, Claud
 
 **Prints da funcionalidade (dados diferentes manipulados pelo CRUD):**
 
-![Print 1 - Calendário com primeiro conjunto de dados](./caminho/print1.png)
+![Print 1 - Calendário com primeiro conjunto de dados](./assets/img/print1.png)
 
-![Print 2 - Calendário com dados alterados via CRUD](./caminho/print2.png)
+![Print 2 - Calendário com dados alterados via CRUD](./assets/img/print2.png)
