@@ -1,0 +1,14 @@
+{
+  "name": "ai-hub",
+  "version": "2.0.0",
+  "description": "AI Hub — Ferramentas de Inteligência Artificial. Trabalho Prático de Desenvolvimento Web.",
+  "private": true,
+  "scripts": {
+    "api": "json-server --watch db.json --port 3000",
+    "web": "json-server --watch db.json --port 3000 --static .",
+    "start": "json-server --watch db.json --port 3000 --static ."
+  },
+  "devDependencies": {
+    "json-server": "0.17.4"
+  }
+}

@@ -144,6 +144,41 @@ body {
 /* ─── About Card ─────────────────────────────────────────────────────────── */
 .card.border-primary { border: 1px solid var(--primary) !important; }
 
+/* ─── Calendário (FullCalendar) ──────────────────────────────────────────── */
+#calendar {
+  --fc-border-color: rgba(255, 255, 255, 0.10);
+  --fc-page-bg-color: transparent;
+  --fc-neutral-bg-color: rgba(255, 255, 255, 0.03);
+  --fc-list-event-hover-bg-color: rgba(13, 110, 253, 0.15);
+  --fc-today-bg-color: rgba(13, 110, 253, 0.12);
+  color: #e6edf3;
+}
+.fc .fc-toolbar-title { color: #fff; font-weight: 700; }
+.fc .fc-col-header-cell-cushion,
+.fc .fc-daygrid-day-number { color: #cdd6e0; text-decoration: none; }
+.fc .fc-daygrid-day.fc-day-other .fc-daygrid-day-number { color: #5b6573; }
+.fc .fc-button-primary {
+  background-color: var(--bg-card);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #e6edf3;
+}
+.fc .fc-button-primary:hover { background-color: var(--primary); border-color: var(--primary); }
+.fc .fc-button-primary:not(:disabled).fc-button-active,
+.fc .fc-button-primary:not(:disabled):active {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+.fc .fc-button-primary:disabled { background-color: var(--bg-card); border-color: rgba(255, 255, 255, 0.1); }
+.fc-event { cursor: pointer; border: none; }
+.fc .fc-list-empty { background-color: transparent; color: #9ca3af; }
+.fc-theme-standard .fc-list-day-cushion { background-color: rgba(255, 255, 255, 0.05); }
+.fc .fc-list-event:hover td { background-color: var(--fc-list-event-hover-bg-color); }
+
+@media (max-width: 576px) {
+  .fc .fc-toolbar { flex-direction: column; gap: 0.5rem; }
+  .fc .fc-toolbar-title { font-size: 1.1rem; }
+}
+
 /* ─── Footer ─────────────────────────────────────────────────────────────── */
 .footer { border-top: 1px solid rgba(255, 255, 255, 0.07); }
 
