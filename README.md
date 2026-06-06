@@ -46,3 +46,5 @@ Site sobre as principais ferramentas de Inteligência Artificial (ChatGPT, Claud
 ![Print 1 - Calendário com primeiro conjunto de dados](./assets/img/print1.png)
 
 ![Print 2 - Calendário com dados alterados via CRUD](./assets/img/print2.png)
+
+![Print 3 - Detalhes do evento exibidos ao clicar no calendário](./assets/img/print3.png)
