@@ -11,9 +11,24 @@
       "destaque": true,
       "imagem_principal": "https://picsum.photos/seed/chatgpt-main/1200/500",
       "recursos": [
-        { "id": 1, "nome": "Geração de Texto", "descricao": "Cria artigos, redações e e-mails com alta qualidade.", "imagem": "https://picsum.photos/seed/gpt-texto/400/300" },
-        { "id": 2, "nome": "Programação Assistida", "descricao": "Auxilia na escrita e depuração de código em diversas linguagens.", "imagem": "https://picsum.photos/seed/gpt-codigo/400/300" },
-        { "id": 3, "nome": "Análise de Dados", "descricao": "Interpreta planilhas, gráficos e resultados de pesquisas.", "imagem": "https://picsum.photos/seed/gpt-dados/400/300" }
+        {
+          "id": 1,
+          "nome": "Geração de Texto",
+          "descricao": "Cria artigos, redações e e-mails com alta qualidade.",
+          "imagem": "https://picsum.photos/seed/gpt-texto/400/300"
+        },
+        {
+          "id": 2,
+          "nome": "Programação Assistida",
+          "descricao": "Auxilia na escrita e depuração de código em diversas linguagens.",
+          "imagem": "https://picsum.photos/seed/gpt-codigo/400/300"
+        },
+        {
+          "id": 3,
+          "nome": "Análise de Dados",
+          "descricao": "Interpreta planilhas, gráficos e resultados de pesquisas.",
+          "imagem": "https://picsum.photos/seed/gpt-dados/400/300"
+        }
       ]
     },
     {
@@ -27,9 +42,24 @@
       "destaque": true,
       "imagem_principal": "https://picsum.photos/seed/claude-main/1200/500",
       "recursos": [
-        { "id": 1, "nome": "Análise de Documentos", "descricao": "Lê e resume PDFs, contratos e relatórios longos.", "imagem": "https://picsum.photos/seed/claude-docs/400/300" },
-        { "id": 2, "nome": "Raciocínio Avançado", "descricao": "Resolve problemas lógicos e matemáticos com profundidade.", "imagem": "https://picsum.photos/seed/claude-logic/400/300" },
-        { "id": 3, "nome": "Escrita Criativa", "descricao": "Produz histórias, roteiros e poesias com alta qualidade.", "imagem": "https://picsum.photos/seed/claude-write/400/300" }
+        {
+          "id": 1,
+          "nome": "Análise de Documentos",
+          "descricao": "Lê e resume PDFs, contratos e relatórios longos.",
+          "imagem": "https://picsum.photos/seed/claude-docs/400/300"
+        },
+        {
+          "id": 2,
+          "nome": "Raciocínio Avançado",
+          "descricao": "Resolve problemas lógicos e matemáticos com profundidade.",
+          "imagem": "https://picsum.photos/seed/claude-logic/400/300"
+        },
+        {
+          "id": 3,
+          "nome": "Escrita Criativa",
+          "descricao": "Produz histórias, roteiros e poesias com alta qualidade.",
+          "imagem": "https://picsum.photos/seed/claude-write/400/300"
+        }
       ]
     },
     {
@@ -43,9 +73,24 @@
       "destaque": true,
       "imagem_principal": "https://picsum.photos/seed/midjourney-main/1200/500",
       "recursos": [
-        { "id": 1, "nome": "Arte Digital", "descricao": "Cria ilustrações em diferentes estilos artísticos.", "imagem": "https://picsum.photos/seed/mj-arte/400/300" },
-        { "id": 2, "nome": "Fotorrealismo", "descricao": "Gera imagens com aparência fotográfica ultra-realista.", "imagem": "https://picsum.photos/seed/mj-foto/400/300" },
-        { "id": 3, "nome": "Design de Personagens", "descricao": "Desenvolve personagens originais para jogos e histórias.", "imagem": "https://picsum.photos/seed/mj-char/400/300" }
+        {
+          "id": 1,
+          "nome": "Arte Digital",
+          "descricao": "Cria ilustrações em diferentes estilos artísticos.",
+          "imagem": "https://picsum.photos/seed/mj-arte/400/300"
+        },
+        {
+          "id": 2,
+          "nome": "Fotorrealismo",
+          "descricao": "Gera imagens com aparência fotográfica ultra-realista.",
+          "imagem": "https://picsum.photos/seed/mj-foto/400/300"
+        },
+        {
+          "id": 3,
+          "nome": "Design de Personagens",
+          "descricao": "Desenvolve personagens originais para jogos e histórias.",
+          "imagem": "https://picsum.photos/seed/mj-char/400/300"
+        }
       ]
     },
     {
@@ -59,9 +104,24 @@
       "destaque": false,
       "imagem_principal": "https://picsum.photos/seed/copilot-main/1200/500",
       "recursos": [
-        { "id": 1, "nome": "Autocompletar Código", "descricao": "Completa linhas e funções automaticamente enquanto digita.", "imagem": "https://picsum.photos/seed/cop-complete/400/300" },
-        { "id": 2, "nome": "Geração de Testes", "descricao": "Cria testes unitários e de integração para funções existentes.", "imagem": "https://picsum.photos/seed/cop-tests/400/300" },
-        { "id": 3, "nome": "Documentação Automática", "descricao": "Gera comentários e documentação técnica para o código.", "imagem": "https://picsum.photos/seed/cop-docs/400/300" }
+        {
+          "id": 1,
+          "nome": "Autocompletar Código",
+          "descricao": "Completa linhas e funções automaticamente enquanto digita.",
+          "imagem": "https://picsum.photos/seed/cop-complete/400/300"
+        },
+        {
+          "id": 2,
+          "nome": "Geração de Testes",
+          "descricao": "Cria testes unitários e de integração para funções existentes.",
+          "imagem": "https://picsum.photos/seed/cop-tests/400/300"
+        },
+        {
+          "id": 3,
+          "nome": "Documentação Automática",
+          "descricao": "Gera comentários e documentação técnica para o código.",
+          "imagem": "https://picsum.photos/seed/cop-docs/400/300"
+        }
       ]
     },
     {
@@ -75,9 +135,24 @@
       "destaque": false,
       "imagem_principal": "https://picsum.photos/seed/gemini-main/1200/500",
       "recursos": [
-        { "id": 1, "nome": "Visão Computacional", "descricao": "Analisa imagens e vídeos com precisão e velocidade.", "imagem": "https://picsum.photos/seed/gem-vision/400/300" },
-        { "id": 2, "nome": "Integração Google", "descricao": "Conecta-se ao Workspace, Maps e demais serviços Google.", "imagem": "https://picsum.photos/seed/gem-google/400/300" },
-        { "id": 3, "nome": "Código Multilingue", "descricao": "Programa em dezenas de linguagens com contexto amplo.", "imagem": "https://picsum.photos/seed/gem-code/400/300" }
+        {
+          "id": 1,
+          "nome": "Visão Computacional",
+          "descricao": "Analisa imagens e vídeos com precisão e velocidade.",
+          "imagem": "https://picsum.photos/seed/gem-vision/400/300"
+        },
+        {
+          "id": 2,
+          "nome": "Integração Google",
+          "descricao": "Conecta-se ao Workspace, Maps e demais serviços Google.",
+          "imagem": "https://picsum.photos/seed/gem-google/400/300"
+        },
+        {
+          "id": 3,
+          "nome": "Código Multilingue",
+          "descricao": "Programa em dezenas de linguagens com contexto amplo.",
+          "imagem": "https://picsum.photos/seed/gem-code/400/300"
+        }
       ]
     },
     {
@@ -91,9 +166,24 @@
       "destaque": false,
       "imagem_principal": "https://picsum.photos/seed/sora-main/1200/500",
       "recursos": [
-        { "id": 1, "nome": "Geração de Vídeo", "descricao": "Cria clipes realistas com narrativa coerente a partir de texto.", "imagem": "https://picsum.photos/seed/sora-video/400/300" },
-        { "id": 2, "nome": "Animação IA", "descricao": "Gera animações fluidas com personagens e cenários detalhados.", "imagem": "https://picsum.photos/seed/sora-anim/400/300" },
-        { "id": 3, "nome": "Edição Criativa", "descricao": "Edita e transforma vídeos existentes com inteligência artificial.", "imagem": "https://picsum.photos/seed/sora-edit/400/300" }
+        {
+          "id": 1,
+          "nome": "Geração de Vídeo",
+          "descricao": "Cria clipes realistas com narrativa coerente a partir de texto.",
+          "imagem": "https://picsum.photos/seed/sora-video/400/300"
+        },
+        {
+          "id": 2,
+          "nome": "Animação IA",
+          "descricao": "Gera animações fluidas com personagens e cenários detalhados.",
+          "imagem": "https://picsum.photos/seed/sora-anim/400/300"
+        },
+        {
+          "id": 3,
+          "nome": "Edição Criativa",
+          "descricao": "Edita e transforma vídeos existentes com inteligência artificial.",
+          "imagem": "https://picsum.photos/seed/sora-edit/400/300"
+        }
       ]
     },
     {
@@ -107,10 +197,45 @@
       "destaque": false,
       "imagem_principal": "https://picsum.photos/seed/dalle-main/1200/500",
       "recursos": [
-        { "id": 1, "nome": "Texto para Imagem", "descricao": "Cria imagens originais a partir de descrições escritas.", "imagem": "https://picsum.photos/seed/dalle-txt/400/300" },
-        { "id": 2, "nome": "Variações", "descricao": "Gera diferentes versões de uma mesma imagem.", "imagem": "https://picsum.photos/seed/dalle-var/400/300" },
-        { "id": 3, "nome": "Edição de Imagens", "descricao": "Edita partes de uma imagem mantendo o contexto.", "imagem": "https://picsum.photos/seed/dalle-edit/400/300" }
+        {
+          "id": 1,
+          "nome": "Texto para Imagem",
+          "descricao": "Cria imagens originais a partir de descrições escritas.",
+          "imagem": "https://picsum.photos/seed/dalle-txt/400/300"
+        },
+        {
+          "id": 2,
+          "nome": "Variações",
+          "descricao": "Gera diferentes versões de uma mesma imagem.",
+          "imagem": "https://picsum.photos/seed/dalle-var/400/300"
+        },
+        {
+          "id": 3,
+          "nome": "Edição de Imagens",
+          "descricao": "Edita partes de uma imagem mantendo o contexto.",
+          "imagem": "https://picsum.photos/seed/dalle-edit/400/300"
+        }
       ]
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "login": "admin",
+      "senha": "admin",
+      "nome": "Administrador",
+      "email": "admin@aihub.com",
+      "admin": true,
+      "favoritos": []
+    },
+    {
+      "id": 2,
+      "login": "francisco",
+      "senha": "123",
+      "nome": "Francisco Ronaldo",
+      "email": "rronaldo.vasconcelos@gmail.com",
+      "admin": false,
+      "favoritos": []
     }
   ]
 }
