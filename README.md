@@ -5,7 +5,7 @@ Site sobre as principais ferramentas de Inteligência Artificial (ChatGPT, Claud
 ## Páginas
 
 - **index.html** — página inicial com hero, carrossel de destaques, listagem das ferramentas e seção "Sobre".
-- **detalhe.html** — detalhes de uma ferramenta específica (acessada por `?id=`).
+- **detalhes.html** — detalhes de uma ferramenta específica (acessada por `?id=`).
 - **calendario.html** — calendário interativo com os lançamentos das ferramentas.
 
 ## Como rodar o projeto (localhost)

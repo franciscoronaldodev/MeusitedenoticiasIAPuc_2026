@@ -57,7 +57,7 @@ function abrirDetalhes(info) {
   document.getElementById("eventoModalDescricao").textContent = p.descricao || "";
   document.getElementById("eventoModalEmpresa").textContent = p.empresa || "";
   document.getElementById("eventoModalData").textContent = "Lançamento: " + formatarData(p.lancamento);
-  document.getElementById("eventoModalLink").href = "detalhe.html?id=" + p.id;
+  document.getElementById("eventoModalLink").href = "detalhes.html?id=" + p.id;
 
   const modal = new bootstrap.Modal(document.getElementById("eventoModal"));
   modal.show();
