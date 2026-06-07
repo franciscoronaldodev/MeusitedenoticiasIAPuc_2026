@@ -95,17 +95,102 @@ const dados = {
         { id: 2, nome: "Animação IA", descricao: "Gera animações fluidas com personagens e cenários detalhados.", imagem: "https://picsum.photos/seed/sora-anim/400/300" },
         { id: 3, nome: "Edição Criativa", descricao: "Edita e transforma vídeos existentes com inteligência artificial.", imagem: "https://picsum.photos/seed/sora-edit/400/300" }
       ]
+    },
+    {
+      id: 7,
+      nome: "DALL-E",
+      descricao: "Modelo da OpenAI que gera imagens originais a partir de descrições em linguagem natural.",
+      conteudo: "DALL-E é o modelo de geração de imagens da OpenAI, capaz de criar ilustrações, fotos e artes a partir de descrições textuais. Combina criatividade e precisão, sendo amplamente usado em design, publicidade e produção de conteúdo visual.",
+      empresa: "OpenAI",
+      categoria: "Geração de Imagens",
+      lancamento: "2022-06-10",
+      destaque: false,
+      imagem_principal: "https://picsum.photos/seed/dalle-main/1200/500",
+      recursos: [
+        { id: 1, nome: "Texto para Imagem", descricao: "Cria imagens originais a partir de descrições escritas.", imagem: "https://picsum.photos/seed/dalle-txt/400/300" },
+        { id: 2, nome: "Variações", descricao: "Gera diferentes versões de uma mesma imagem.", imagem: "https://picsum.photos/seed/dalle-var/400/300" },
+        { id: 3, nome: "Edição de Imagens", descricao: "Edita partes de uma imagem mantendo o contexto.", imagem: "https://picsum.photos/seed/dalle-edit/400/300" }
+      ]
     }
   ]
 };
 
-// ─── Carousel ───────────────────────────────────────────────────────────────
+const API_FERRAMENTAS = "http://localhost:3000/ferramentas";
+
+let listaFerramentas = [];
+
+async function carregarFerramentas() {
+  try {
+    const resp = await fetch(API_FERRAMENTAS);
+    if (!resp.ok) throw new Error("erro");
+    return await resp.json();
+  } catch (e) {
+    return dados.ferramentas;
+  }
+}
+
+function ehFavorito(id) {
+  const usuario = usuarioLogado();
+  if (!usuario || !usuario.favoritos) return false;
+  return usuario.favoritos.includes(id);
+}
+
+async function alternarFavorito(id) {
+  const usuario = usuarioLogado();
+  if (!usuario) {
+    window.location.href = "login.html";
+    return;
+  }
+  let favoritos = usuario.favoritos || [];
+  if (favoritos.includes(id)) {
+    favoritos = favoritos.filter(f => f !== id);
+  } else {
+    favoritos = favoritos.concat(id);
+  }
+  try {
+    const resp = await fetch(`${API_USUARIOS}/${usuario.id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ favoritos: favoritos })
+    });
+    const atualizado = await resp.json();
+    salvarSessao(atualizado);
+  } catch (e) {
+    alert("Não foi possível salvar o favorito.");
+    return;
+  }
+  renderCards(listaFerramentas);
+  renderDetalhe();
+}
+
+function botaoFavorito(id, inline) {
+  const cheio = ehFavorito(id);
+  const icone = cheio ? "bi-heart-fill" : "bi-heart";
+  const classe = inline ? "btn favorito-btn favorito-btn-inline" : "btn favorito-btn";
+  return `<button type="button" class="${classe}" data-id="${id}">
+            <i class="bi ${icone}"></i>
+          </button>`;
+}
+
+function ligarBotoesFavorito() {
+  document.querySelectorAll(".favorito-btn").forEach(btn => {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      alternarFavorito(parseInt(btn.dataset.id));
+    });
+  });
+}
+
 function renderCarousel() {
   const inner = document.getElementById("carouselInner");
   const indicators = document.getElementById("carouselIndicators");
   if (!inner || !indicators) return;
 
-  const destaques = dados.ferramentas.filter(f => f.destaque);
+  inner.innerHTML = "";
+  indicators.innerHTML = "";
+
+  const destaques = listaFerramentas.filter(f => f.destaque);
 
   destaques.forEach((item, index) => {
     const btn = document.createElement("button");
@@ -128,7 +213,7 @@ function renderCarousel() {
         <span class="badge bg-primary mb-2 fs-6">${item.categoria}</span>
         <h3 class="fw-bold">${item.nome}</h3>
         <p class="d-none d-md-block">${item.descricao}</p>
-        <a href="detalhe.html?id=${item.id}" class="btn btn-primary mt-1">
+        <a href="detalhes.html?id=${item.id}" class="btn btn-primary mt-1">
           Ver Detalhes <i class="bi bi-arrow-right ms-1"></i>
         </a>
       </div>
@@ -137,12 +222,18 @@ function renderCarousel() {
   });
 }
 
-// ─── Cards ───────────────────────────────────────────────────────────────────
-function renderCards() {
+function renderCards(lista) {
   const container = document.getElementById("cardsContainer");
   if (!container) return;
 
-  dados.ferramentas.forEach(item => {
+  container.innerHTML = "";
+
+  if (lista.length === 0) {
+    container.innerHTML = '<p class="text-muted">Nenhuma ferramenta encontrada.</p>';
+    return;
+  }
+
+  lista.forEach(item => {
     const col = document.createElement("div");
     col.className = "col";
     col.innerHTML = `
@@ -150,6 +241,7 @@ function renderCards() {
         <div class="card-img-wrapper">
           <img src="${item.imagem_principal}" class="card-img-top" alt="${item.nome}" />
           ${item.destaque ? '<span class="badge bg-warning text-dark card-badge"><i class="bi bi-star-fill me-1"></i>Destaque</span>' : ""}
+          ${botaoFavorito(item.id)}
         </div>
         <div class="card-body d-flex flex-column">
           <span class="badge bg-primary mb-2 align-self-start">${item.categoria}</span>
@@ -157,23 +249,37 @@ function renderCards() {
           <p class="card-text text-muted flex-grow-1">${item.descricao}</p>
           <div class="d-flex justify-content-between align-items-center mt-3">
             <small class="text-muted"><i class="bi bi-building me-1"></i>${item.empresa}</small>
-            <a href="detalhe.html?id=${item.id}" class="btn btn-outline-primary btn-sm">Ver mais</a>
+            <a href="detalhes.html?id=${item.id}" class="btn btn-outline-primary btn-sm">Ver mais</a>
           </div>
         </div>
       </div>
     `;
     container.appendChild(col);
   });
+
+  ligarBotoesFavorito();
 }
 
-// ─── Detalhe ─────────────────────────────────────────────────────────────────
+function ligarBusca() {
+  const campo = document.getElementById("campoBusca");
+  if (!campo) return;
+  campo.addEventListener("input", function () {
+    const texto = campo.value.toLowerCase().trim();
+    const filtradas = listaFerramentas.filter(f =>
+      f.nome.toLowerCase().includes(texto) ||
+      f.descricao.toLowerCase().includes(texto)
+    );
+    renderCards(filtradas);
+  });
+}
+
 function renderDetalhe() {
   const container = document.getElementById("detalheContainer");
   if (!container) return;
 
   const params = new URLSearchParams(window.location.search);
   const id = parseInt(params.get("id"));
-  const item = dados.ferramentas.find(f => f.id === id);
+  const item = listaFerramentas.find(f => f.id === id);
 
   if (!item) {
     container.innerHTML = `
@@ -224,7 +330,10 @@ function renderDetalhe() {
             </div>
           </div>
           <div class="col-lg-6 text-white">
-            <span class="badge bg-primary fs-6 mb-3">${item.categoria}</span>
+            <div class="d-flex justify-content-between align-items-start">
+              <span class="badge bg-primary fs-6 mb-3">${item.categoria}</span>
+              ${botaoFavorito(item.id, true)}
+            </div>
             <h1 class="display-5 fw-bold mb-3">${item.nome}</h1>
             <p class="lead text-secondary mb-4">${item.descricao}</p>
             <div class="detalhe-info-grid mb-4">
@@ -293,11 +402,17 @@ function renderDetalhe() {
       </div>
     </section>
   `;
+
+  ligarBotoesFavorito();
 }
 
-// ─── Boot ─────────────────────────────────────────────────────────────────────
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+  const ehHome = document.getElementById("campoBusca");
+  const ehDetalhe = document.getElementById("detalheContainer");
+  if (!ehHome && !ehDetalhe) return;
+  listaFerramentas = await carregarFerramentas();
   renderCarousel();
-  renderCards();
+  renderCards(listaFerramentas);
+  ligarBusca();
   renderDetalhe();
 });

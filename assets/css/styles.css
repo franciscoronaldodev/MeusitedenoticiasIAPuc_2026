@@ -103,6 +103,36 @@ body {
   right: 0.75rem;
   font-size: 0.72rem;
 }
+.favorito-btn {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.55);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.favorito-btn i {
+  color: #ff4d6d;
+  font-size: 1.2rem;
+}
+.favorito-btn:hover {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.favorito-btn-inline {
+  position: static;
+}
+.autor-avatar {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 3px solid var(--bs-primary, #0d6efd);
+}
 
 /* ─── Detalhe ────────────────────────────────────────────────────────────── */
 .pt-navbar { padding-top: 96px; }

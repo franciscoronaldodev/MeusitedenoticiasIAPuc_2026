@@ -85,6 +85,14 @@
       <h2 class="section-title text-white mb-4">
         <i class="bi bi-grid-fill text-primary me-2"></i>Todas as Ferramentas
       </h2>
+      <div class="row mb-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="input-group">
+            <span class="input-group-text bg-dark border-secondary text-primary"><i class="bi bi-search"></i></span>
+            <input type="text" id="campoBusca" class="form-control bg-dark text-white border-secondary" placeholder="Buscar ferramenta..." />
+          </div>
+        </div>
+      </div>
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="cardsContainer">
         <!-- Renderizado via JavaScript -->
       </div>
@@ -101,27 +109,30 @@
         <div class="col-md-7 col-lg-5">
           <div class="card bg-dark-card border-primary text-white text-center p-4 shadow-lg">
             <div class="mb-3">
-              <i class="bi bi-person-fill display-2 text-primary"></i>
+              <img src="assets/img/avatar.png" alt="Foto do autor" class="rounded-circle autor-avatar"
+                   onerror="this.style.display='none'; document.getElementById('avatarIcone').style.display='inline-block';" />
+              <i id="avatarIcone" class="bi bi-person-fill display-2 text-primary" style="display:none;"></i>
             </div>
-            <h4 class="fw-bold">Francisco Ronaldo Vasconcelos Araújo</h4>
-            <p class="text-muted mb-3">Estudante de Tecnologia da Informação</p>
+            <h4 class="fw-bold">Francisco Ronaldo Vasconcelos Araujo</h4>
+            <p class="text-muted mb-3">Estudante de Sistemas de Informação</p>
+            <p class="text-secondary px-2">[minibio — revisar: escreva aqui uma breve apresentação sobre você]</p>
             <hr class="border-secondary" />
             <ul class="list-unstyled text-start mt-3 mb-0">
               <li class="mb-2">
                 <i class="bi bi-mortarboard-fill text-primary me-2"></i>
-                Trabalho Prático 1 — Desenvolvimento Web
+                Curso: Sistemas de Informação
               </li>
               <li class="mb-2">
-                <i class="bi bi-calendar-fill text-primary me-2"></i>
-                2026
+                <i class="bi bi-hash text-primary me-2"></i>
+                Turma/Código: 1659978
               </li>
               <li class="mb-2">
-                <i class="bi bi-envelope-fill text-primary me-2"></i>
-                rronaldo.vasconcelos@gmail.com
+                <i class="bi bi-instagram text-primary me-2"></i>
+                @rronaldo.vasconcelos
               </li>
               <li>
-                <i class="bi bi-laptop-fill text-primary me-2"></i>
-                Tema: Ferramentas de Inteligência Artificial
+                <i class="bi bi-envelope-fill text-primary me-2"></i>
+                rronaldo.vasconcelos@gmail.com
               </li>
             </ul>
           </div>
@@ -141,6 +152,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/auth.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
 </html>
