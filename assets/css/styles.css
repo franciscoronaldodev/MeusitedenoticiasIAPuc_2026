@@ -78,6 +78,11 @@ body {
   right: auto;
   max-width: 55%;
   text-align: left;
+  z-index: 10;
+}
+.carousel-caption-custom a {
+  position: relative;
+  z-index: 11;
 }
 
 /* ─── Cards ──────────────────────────────────────────────────────────────── */
