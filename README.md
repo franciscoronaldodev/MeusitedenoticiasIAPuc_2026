@@ -45,7 +45,7 @@ Site sobre as principais ferramentas de Inteligência Artificial (ChatGPT, Claud
    - Calendário: http://localhost:3000/calendario.html
    - API (dados): http://localhost:3000/ferramentas
 
-> O JSON Server lê o arquivo `db.json`. Qualquer alteração feita nos dados (adicionar, editar ou remover ferramentas) é refletida automaticamente no site e no calendário ao recarregar a página.
+> O JSON Server lê o arquivo `db/db.json` e serve os arquivos do site a partir da pasta `public`. Qualquer alteração feita nos dados (adicionar, editar ou remover ferramentas) é refletida automaticamente no site e no calendário ao recarregar a página.
 
 ## Apresentação Dinâmica de Dados
 
