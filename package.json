@@ -4,9 +4,9 @@
   "description": "AI Hub — Ferramentas de Inteligência Artificial. Trabalho Prático de Desenvolvimento Web.",
   "private": true,
   "scripts": {
-    "api": "json-server --watch db.json --port 3000",
-    "web": "json-server --watch db.json --port 3000 --static .",
-    "start": "json-server --watch db.json --port 3000 --static ."
+    "api": "json-server --watch db/db.json --port 3000",
+    "web": "json-server --watch db/db.json --port 3000 --static public",
+    "start": "json-server --watch db/db.json --port 3000 --static public"
   },
   "devDependencies": {
     "json-server": "0.17.4"

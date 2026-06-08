@@ -239,9 +239,7 @@
       "nome": "Francisco Ronaldo",
       "email": "rronaldo.vasconcelos@gmail.com",
       "admin": false,
-      "favoritos": [
-        2
-      ]
+      "favoritos": []
     }
   ]
 }
