@@ -1,17 +1,11 @@
-// Calendário de lançamentos das ferramentas
-// Lê os dados do JSON Server (db.json) e, se o servidor não estiver rodando,
-// usa o array "dados" que vem do app.js como reserva.
-
 const API_URL = "http://localhost:3000/ferramentas";
 
-// Busca as ferramentas. Primeiro tenta o JSON Server; se falhar, cai no array local.
 async function carregarFerramentas() {
   try {
     const resp = await fetch(API_URL);
     if (!resp.ok) throw new Error("Resposta inválida do servidor");
     return await resp.json();
   } catch (e) {
-    // Servidor offline ou página aberta direto pelo arquivo: usa o app.js
     if (typeof dados !== "undefined" && dados.ferramentas) {
       return dados.ferramentas;
     }
@@ -19,10 +13,9 @@ async function carregarFerramentas() {
   }
 }
 
-// Transforma cada ferramenta em um evento do calendário
 function montarEventos(ferramentas) {
   return ferramentas
-    .filter(f => f.lancamento) // ignora itens sem data
+    .filter(f => f.lancamento)
     .map(f => ({
       title: f.nome,
       date: f.lancamento,
@@ -36,7 +29,6 @@ function montarEventos(ferramentas) {
     }));
 }
 
-// Formata a data (AAAA-MM-DD) para o formato brasileiro
 function formatarData(iso) {
   const d = new Date(iso + "T12:00:00");
   return d.toLocaleDateString("pt-BR", { day: "2-digit", month: "long", year: "numeric" });
@@ -49,7 +41,6 @@ function mostrarAviso(texto) {
   aviso.classList.remove("d-none");
 }
 
-// Abre o modal com os detalhes do evento clicado
 function abrirDetalhes(info) {
   const p = info.event.extendedProps;
   document.querySelector("#eventoModalTitulo span").textContent = info.event.title;
@@ -74,7 +65,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     mostrarAviso("Nenhuma ferramenta com data de lançamento foi encontrada.");
   }
 
-  // Abre o calendário no mês do lançamento mais antigo, para já mostrar eventos
   let dataInicial;
   if (eventos.length > 0) {
     dataInicial = eventos.map(ev => ev.date).sort()[0];
@@ -105,7 +95,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   calendar.render();
 
-  // Garante que a tela abra no mês do primeiro lançamento
   if (dataInicial) {
     calendar.gotoDate(dataInicial);
   }

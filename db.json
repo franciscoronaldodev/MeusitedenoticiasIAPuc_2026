@@ -226,7 +226,11 @@
       "nome": "Administrador",
       "email": "admin@aihub.com",
       "admin": true,
-      "favoritos": []
+      "favoritos": [
+        2,
+        7,
+        6
+      ]
     },
     {
       "id": 2,
@@ -235,7 +239,9 @@
       "nome": "Francisco Ronaldo",
       "email": "rronaldo.vasconcelos@gmail.com",
       "admin": false,
-      "favoritos": []
+      "favoritos": [
+        2
+      ]
     }
   ]
 }

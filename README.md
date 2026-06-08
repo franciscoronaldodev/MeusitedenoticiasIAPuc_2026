@@ -4,9 +4,24 @@ Site sobre as principais ferramentas de Inteligência Artificial (ChatGPT, Claud
 
 ## Páginas
 
-- **index.html** — página inicial com hero, carrossel de destaques, listagem das ferramentas e seção "Sobre".
+- **index.html** — página inicial com hero, carrossel de destaques, busca, listagem das ferramentas e seção "Sobre".
 - **detalhes.html** — detalhes de uma ferramenta específica (acessada por `?id=`).
 - **calendario.html** — calendário interativo com os lançamentos das ferramentas.
+- **login.html** — tela de login.
+- **cadastro.html** — cadastro de novos usuários.
+- **favoritos.html** — lista as ferramentas favoritadas pelo usuário logado.
+- **cadastro_itens.html** — cadastro, edição e exclusão de ferramentas (apenas administrador).
+
+## Funcionalidades
+
+- **Login e cadastro de usuários:** os dados ficam na coleção `usuarios` do `db.json`. O usuário logado é guardado no `sessionStorage`. O menu muda conforme o login (mostra "Favoritos" quando logado, alterna "Login"/"Logout" e mostra "Cadastro de itens" apenas para administrador).
+- **Busca:** campo na home que filtra as ferramentas por nome ou descrição.
+- **Favoritos:** ícone de coração nos cards e na página de detalhes, salvo por usuário no JSON Server.
+
+### Usuários de exemplo
+
+- Administrador → login: `admin` / senha: `admin`
+- Usuário comum → login: `francisco` / senha: `123`
 
 ## Como rodar o projeto (localhost)
 
